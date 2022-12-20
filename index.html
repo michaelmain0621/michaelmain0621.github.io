@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/login-page.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Open+Sans&family=Space+Mono&family=Work+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+    <title>Project | Log In</title>
+    
+</head>
+<body>
+    <div class="pseudo-title">
+        <h1>Log In</h1>
+        <img src='https://th.bing.com/th/id/R.bcca0f3ac3960ad499b3b08ea4cd4228?rik=aDuLHQ%2bgaqFqow&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-images-free%2ftransparent-images-free-24.png&ehk=TNfHzhvyyNoBkufoC08hc4PdEkeP%2bPkMv7pzJa46qmo%3d&risl=&pid=ImgRaw&r=0' height="90px">
+        <form onsubmit="return validateForm()">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Submit">
+          </form>
+          
+          <script>
+            function validateForm() {
+              // Get the entered username and password
+              var username = document.getElementById("username").value;
+              var password = document.getElementById("password").value;
+          
+              // Check if the username and password fields are not empty
+              if (username === "" || password === "") {
+                alert("Username and password are required.");
+                return false;
+              }
+          
+              // Check if the entered credentials are valid
+              if (username === "admin" && password === "password") {
+                // Redirect the user to the intended page
+                window.location.href = "michaelmain0621.github.io/homepage.html";
+                return true;
+              } else {
+                alert("Invalid username or password.");
+                return false;
+              }
+            }
+          </script>
+          
+          
+        
+                
+        
+    </div>
+</body>
+</html>
