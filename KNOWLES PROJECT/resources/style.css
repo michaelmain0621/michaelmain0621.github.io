@@ -1,0 +1,76 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: inline-block;
+}
+
+.logo, .item{
+    display: inline;
+}
+
+.logo{
+    margin-right: 390px;
+    margin-left: 20px;
+}
+
+.pfp{
+    position: relative;
+    display: inline;
+    left: 1800px;
+    bottom: 70px;
+}
+
+.item{
+    position: absolute;
+    margin: 0 10px;
+    bottom: 23px;
+}
+.tb-1{
+    position: relative;
+}
+
+.tb-2{
+    position: relative;
+}
+
+.tb-3{
+    position: relative;
+}
+
+.tb-4{
+    position: relative;
+}
+
+li{
+    list-style: none;
+    position: relative;
+    left: 200px;
+    bottom: 20px;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color:black;
+}
+
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 1px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor:crosshair;
+}
+#gameContainer{
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+}
