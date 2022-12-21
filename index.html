@@ -15,7 +15,7 @@
     <div class="pseudo-title">
         <h1>Log In</h1>
         <img src='https://th.bing.com/th/id/R.bcca0f3ac3960ad499b3b08ea4cd4228?rik=aDuLHQ%2bgaqFqow&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-images-free%2ftransparent-images-free-24.png&ehk=TNfHzhvyyNoBkufoC08hc4PdEkeP%2bPkMv7pzJa46qmo%3d&risl=&pid=ImgRaw&r=0' height="90px">
-        <form action='window.location.href'onsubmit="validateForm()">
+        <form action='homepage.html'onsubmit="return validateForm()">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username"><br>
             <label for="password">Password:</label><br>
@@ -33,6 +33,7 @@
               if (username === "" || password === "") {
                 alert("Username and password are required.");
                 return false;
+                event.preventDefault();
               }
           
               // Check if the entered credentials are valid
@@ -43,6 +44,7 @@
               } else {
                 alert("Invalid username or password.");
                 return false;
+                event.preventDefault();
               }
             }
           </script>
