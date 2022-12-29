@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: SoulMaze;
+    background-color: #0d1117;
+    color: white;
+}
+
+
+@font-face {
+    font-family: 'SoulMaze';
+    src: url(./fonts/soulmaze.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SoulMaze-OutItal';
+    src: url(./fonts/soulmaze-outline-italic.otf) format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.pseudo-title{
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pseudo-title h1{
+    margin-bottom: 25px;
+    
+}
+
+#username, #password{
+    height: 30px;
+    margin: 10px;
+    width: 400px;
+    font-size: 22px;
+    border: 1px solid transparent;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.submit-button{
+    height: 40px;
+    width: 50%;
+    border-color: transparent;
+}
+
+
+form{
+    color: white;
+}

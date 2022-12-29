@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Clicker Game</title>
+    <link rel="stylesheet" href="resources/style.css">
+</head>
+<body>
+    <header>
+        <img class='logo' src='https://th.bing.com/th/id/R.bcca0f3ac3960ad499b3b08ea4cd4228?rik=aDuLHQ%2bgaqFqow&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-images-free%2ftransparent-images-free-24.png&ehk=TNfHzhvyyNoBkufoC08hc4PdEkeP%2bPkMv7pzJa46qmo%3d&risl=&pid=ImgRaw&r=0' height="70px" width="70px">
+        <li>
+            <a href="homepage.html"><ul class="item tb-1">Home</ul></a>
+            <a href="ttt.html"><ul class="item tb-2">Tic Tac Toe</ul></a>
+            <a href="countdown.html"><ul class="item tb-3">Countdown To...</ul></a>
+            <a href="clickergame.html"><ul class="item tb-4"><u>Clicker Game</u></ul></a>
+        </li>
+        <a href="https://wikipedia.org" target="_blank"><img class="pfp" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" height="40px" width="40px"></a>
+    </header>
+    <div class="clickerContainer">
+        <div class="score-box">
+            <h2>Score: </h2>
+            <h2 id="score-var"></h2>
+        </div>
+        <div class="btnContainer">
+            <button class="clickerBtn" onclick="addScore()">Click Me!</button>
+        </div>
+        <div class="powerBtns">
+            <div id="wrapper-1">
+                <div class ='wrapper-for-button'><button class="powerBtn disability" disabled onclick="multi(2); this.disabled = true;">2X per click</button></div>
+                <h2>Cost: 1</h2>
+            </div>
+            <div id="wrapper-2">
+                <div class ='wrapper-for-button'><button class="powerBtn disability" disabled onclick="plus(5); this.disabled = true;">+5 Score/s</button></div>
+                <h2>Cost: 1</h2>
+            </div>
+            <div id="wrapper-3">
+                <div class ='wrapper-for-button'><button class="powerBtn disability" disabled onclick="multi(3); this.disabled = true;">3x per click</button></div>
+                <h2>Cost: 1</h2>
+            </div>
+            <div id="wrapper-4">
+                <div class ='wrapper-for-button'><button class="powerBtn disability" disabled onclick="plus(10); this.disabled = true;">+10 Score/s</button></div>
+                <h2>Cost: 1</h2>
+            </div>
+            <div id="wrapper-5">
+                <div class ='wrapper-for-button'><button class="powerBtn disability" disabled onclick="multi(4); this.disabled = true;">4X per click</button></div>
+                <h2>Cost: 1</h2>
+            </div>
+            <div id="wrapper-6">
+                <div class ='wrapper-for-button'><button class="powerBtn disability" disabled onclick="multi(10); this.disabled = true;">10X per click</button></div>
+                <h2>Cost: 1</h2>
+            </div>
+        </div>
+        <h2>Try to Reach 20 000 Score!</h2>
+    </div>
+    <script>
+        let score = 0;
+        let multiVar = 1;
+        let autoAdd = 0;
+        function addScore(){
+            score += (1*multiVar);
+        }
+
+        function multi(n){
+            multiVar *= n;
+        }
+
+        function plus(m){
+            autoAdd += m;
+        }
+        
+        function addAuto(){
+            score += autoAdd;
+        }
+        const scoreNum = document.getElementById('score-var');
+        function setScore(){
+            scoreNum.innerHTML = score.toLocaleString('en-US');
+        }
+        setInterval(setScore, 1);
+        setInterval(addAuto, 1000);
+
+        const buttons = document.getElementsByClassName('powerBtn');
+        function checkCriteria(){
+            for(i = 0; i < buttons.length; i++)
+                if (score >= ((5**i)+25) && (buttons[i].classList.contains('disability'))){
+                buttons[i].removeAttribute('disabled');
+                buttons[i].classList.remove('disability');
+            }
+        }
+        setInterval(checkCriteria, 1)
+        
+        
+    </script>
+</body>
+</html>

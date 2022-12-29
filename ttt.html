@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Tic Tac Toe</title>
+    <link rel="stylesheet" href="resources/style.css">
+</head>
+<body>
+    <header>
+        <img class='logo' src='https://th.bing.com/th/id/R.bcca0f3ac3960ad499b3b08ea4cd4228?rik=aDuLHQ%2bgaqFqow&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-images-free%2ftransparent-images-free-24.png&ehk=TNfHzhvyyNoBkufoC08hc4PdEkeP%2bPkMv7pzJa46qmo%3d&risl=&pid=ImgRaw&r=0' height="70px" width="70px">
+        <li>
+            <a href="homepage.html"><ul class="item tb-1">Home</ul></a>
+            <a href="ttt.html"><ul class="item tb-2"><u>Tic Tac Toe</u></ul></a>
+            <a href="countdown.html"><ul class="item tb-3">Countdown To...</ul></a>
+            <a href="clickergame.html"><ul class="item tb-4">Clicker Game</ul></a>
+        </li>
+        <a href="https://wikipedia.org" target="_blank"><img class="pfp" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" height="40px" width="40px"></a>
+    </header>
+    <div id="gameContainer">
+        <h1>Tic Tac Toe</h1>
+        <div id="cellContainer">
+            <div cellIndex="0" class="cell"></div>
+            <div cellIndex="1" class="cell"></div>
+            <div cellIndex="2" class="cell"></div>
+            <div cellIndex="3" class="cell"></div>
+            <div cellIndex="4" class="cell"></div>
+            <div cellIndex="5" class="cell"></div>
+            <div cellIndex="6" class="cell"></div>
+            <div cellIndex="7" class="cell"></div>
+            <div cellIndex="8" class="cell"></div>
+        </div>
+        <h2 id="statusText"></h2>
+        <button id="restartBtn">Restart</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

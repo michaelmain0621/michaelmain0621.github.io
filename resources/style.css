@@ -1,0 +1,317 @@
+*{
+    font-family: SoulMaze-OutItal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0d1117;
+}
+
+
+@font-face {
+    font-family: 'SoulMaze';
+    src: url(./fonts/soulmaze.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SoulMaze-OutItal';
+    src: url(./fonts/soulmaze-outline-italic.otf) format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+h1{
+    letter-spacing: 2px;
+    transition: letter-spacing 2s;
+    font-family: SoulMaze-OutItal;
+    color: white;
+    align-self: center;
+    text-align: center;
+    font-size: 72px;
+    letter-spacing: 2px;
+    transition: letter-spacing 2s;
+}
+h2{
+    color: white;
+}
+p{
+    font-family: SoulMaze;
+    color: white;
+}
+
+ul{
+    color: white;
+}
+.all{
+    opacity: 1;
+}
+
+.box-for-intro{
+    display: flex;
+    align-items: center;
+}
+header{
+    display: inline-block;
+    position: fixed;
+    z-index: 100;
+    width: 89%;
+    height: 100px;
+}
+
+.logo, .item{
+    display: inline;
+}
+
+.logo{
+    margin-right: 390px;
+    margin-left: 20px;
+}
+
+.pfp{
+    position: relative;
+    display: inline;
+    left: 1800px;
+    bottom: 70px;
+}
+
+.item{
+    position: absolute;
+    margin: 0 10px;
+    bottom: 23px;
+}
+.tb-1{
+    position: relative;
+}
+
+.tb-2{
+    position: relative;
+}
+
+.tb-3{
+    position: relative;
+}
+
+.tb-4{
+    position: relative;
+}
+
+li{
+    list-style: none;
+    position: relative;
+    left: 200px;
+    bottom: 20px;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color:black;
+}
+
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 1px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor:crosshair;
+    color: white;
+}
+#gameContainer{
+    position: relative;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    top: 200px;
+    
+}
+#cellContainer{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+}
+
+#restartBtn{
+    color: white;
+}
+
+#intro{
+    justify-self: center;
+    margin-top: 300px;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 75%;
+    
+}
+#intro h1{
+    display: flex;
+    width: 30%;
+    font-size: 72px;
+    letter-spacing: 1.5px;
+    
+}
+#intro p{
+    align-self: center;
+    width: 50%;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+
+.html{
+    margin-top: 50px;
+    justify-self: center;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 75%;
+    
+}
+
+h1:hover{
+    letter-spacing: 100px;
+}
+
+
+
+.html p{
+    align-self: center;
+    text-align: center;
+    width: 55%;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+div[class*='box-for']{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 400px;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+  }
+  
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  
+#welcome-screen{
+    display: flex;
+    z-index: 2000;
+    height: 800px;
+    width: 1920px;
+    position: fixed;
+    animation-name: fadeout;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 2000ms;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+@keyframes fadeout{
+    from {opacity: 1;}
+    to {opacity: 0;}
+    100%{z-index: 0;}
+}
+
+#welcome-screen h2{
+    animation-name: spreadout;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+}
+
+@keyframes spreadout{
+    from {letter-spacing: 1px;}
+    to {letter-spacing: 100px;}
+}
+
+.clickerBtn{
+    border-radius: 100%;
+    color: white;
+    border-color: white;
+    height: 200px;
+    width: 200px;
+    font-size: 22px;
+    border-style: solid;
+}
+.clickerBtn:active{
+    height: 190px;
+    width: 190px;
+    font-size: 20px;
+}
+
+.clickerContainer{
+    display: flex;
+    position: absolute;
+    top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+
+.powerBtns{
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.powerBtn{
+    height: 80px;
+    width: 133px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid white;
+    margin: 1px;
+}
+
+.powerBtn:active{
+    background-color: black;
+    opacity: .8;
+}
+
+.powerBtn:disabled{
+    opacity: 0.2;
+}
+
+div[id*='wrapper']{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    width: 133px;
+}
+
+.score-box{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper-for-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

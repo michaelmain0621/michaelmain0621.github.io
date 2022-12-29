@@ -1,0 +1,63 @@
+#big-timer{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    height: 1000px;
+
+}
+
+#big-timer h2{
+    font-size: 100px;
+}
+
+.container-for-timer{
+    position: relative;
+    top: 200px;
+    display: flex;
+    height: 250px;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div[class*='timer-']{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+button{
+    color: white;
+}
+
+#countdown-buttons{
+    position: absolute;
+    top: 500px;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.filler{
+    display: flex;
+    justify-content: center;
+}
+
+.timer-button{
+    background-color: black;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.until-text{
+    color: white;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+}

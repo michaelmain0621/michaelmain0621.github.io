@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Countdown To...</title>
+    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="resources/countdown.css">
+</head>
+
+<body>
+    <header>
+        <img class='logo' src='resources/website-logo.png' height="70px" width="70px">
+        <li>
+            <a href="homepage.html"><ul class="item tb-1">Home</ul></a>
+            <a href="ttt.html"><ul class="item tb-2">Tic Tac Toe</ul></a>
+            <a href="countdown.html"><ul class="item tb-3"><u>Countdown To...</u></ul></a>
+            <a href="clickergame.html"><ul class="item tb-4">Clicker Game</ul></a>
+        </li>
+    </header>
+    <div class="container-for-timer">
+        <div id="big-timer" class="keyword-christmas">
+            <div class="timer-days">
+                <h2 id="days-num"></h2>
+                <p>Day(s)</p>
+            </div>
+            <div class="timer-hours">
+                <h2 id="hours-num"></h2>
+                <p>Hour(s)</p>
+            </div>
+            <div class="timer-minutes">
+                <h2 id="min-num"></h2>
+                <p>Minute(s)</p>
+            </div>
+            <div class="timer-seconds">
+                <h2 id="sec-num"></h2>
+                <p>Second(s)</p>
+            </div>
+        </div>
+        <div class="until-text">
+            <p>Until</p>
+            <p id="event-var"></p>
+        </div>
+    </div>
+    <div class="filler">
+        <div id="countdown-buttons">
+            <button class="superBowl timer-button" onclick="changeClassOfTimer('keyword-superBowl'); setEventVar('Super Bowl 57')">Super Bowl 57</button>
+            <button class="xmas2023 timer-button" onclick="changeClassOfTimer('keyword-christmas'); setEventVar('Christmas 2023')">Christmas 2023</button>
+            <button class="ween2023 timer-button" onclick="changeClassOfTimer('keyword-halloween'); setEventVar('Halloween 2023')">Halloween 2023</button>
+            <button class="stv2023 timer-button" onclick="changeClassOfTimer('keyword-valentines'); setEventVar('Valentines Day 2023')">Valentine's Day 2023</button>
+            <button class="nye2023 timer-button" onclick="changeClassOfTimer('keyword-nye'); setEventVar('New Years Eve 2023')">New Years Eve 2023</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        function changeClassOfTimer(identifier){
+            let element = document.getElementById("big-timer");
+            let classList = element.classList;
+            for (let i = 0; i < classList.length; i++) {
+            if (classList[i].includes("keyword")) {
+                element.classList.replace(classList[i], String(identifier));
+                };
+            };
+        };
+        
+        const getTimeAfterButton = () =>{
+            const superBowl = (new Date('February 12, 2023 18:30:00')).getTime();
+            const christmas2023 = (new Date('December 25, 2023 00:00:00')).getTime();
+            const halloween2023 = (new Date('October 31, 2023 00:00:00')).getTime();
+            const valentines2023 = (new Date('February 14, 2023 00:00:00')).getTime();
+            const nye2023 = (new Date('December 31, 2023 00:00:00')).getTime();
+            const current = Date.now();
+            var bigTimer = document.getElementById("big-timer");
+            var classList1 = bigTimer.classList;
+            
+            if (classList1.contains('keyword-superBowl')){
+                getDateDifference(superBowl, current);
+            }
+            if (classList1.contains("keyword-christmas")){
+                getDateDifference(christmas2023, current);
+            }
+            if (classList1.contains("keyword-halloween")){
+                getDateDifference(halloween2023, current);
+            }
+            if (classList1.contains("keyword-valentines")){
+                getDateDifference(valentines2023, current);
+            }
+            if (classList1.contains("keyword-nye")){
+                getDateDifference(nye2023, current);
+            }
+        };
+        function getDateDifference(x, n){
+            const diffTime = Math.floor(x - n);
+            const diffSec = Math.floor(diffTime / (1000));
+            const diffMin = Math.floor(diffTime / (1000 * 60));
+            const diffHours = Math.floor(diffTime / (1000 * 60 * 60 ));
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
+            const second = Math.floor(diffSec % 60);
+            const minute = Math.floor(diffMin % 60);
+            const hour = Math.floor(diffHours % 24);
+            const day = Math.floor(diffDays);
+            document.getElementById('days-num').innerHTML = day;
+            document.getElementById('hours-num').innerHTML = hour;
+            document.getElementById('min-num').innerHTML = minute;
+            document.getElementById('sec-num').innerHTML = second;
+        };
+        setInterval(getTimeAfterButton, 1);
+
+        function setEventVar(phrase){
+            document.getElementById('event-var').innerHTML = phrase;
+        }
+    </script>
+</body>
+</html>

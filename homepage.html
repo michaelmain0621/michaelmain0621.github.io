@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/style.css">
+    <title>Project</title>
+    
+</head>
+<body>
+    <script>
+        $(window).scroll(function(){
+            $(".all").css("opacity", 1 - $(window).scrollTop() / 250)
+        });
+    </script>
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+    
+        function reveal(){
+          var reveals = document.querySelectorAll('.reveal');
+    
+          for(var i = 0; i < reveals.length; i++){
+    
+            var windowheight = window.innerHeight;
+            var revealtop = reveals[i].getBoundingClientRect().top;
+            var revealpoint = 200;
+    
+            if(revealtop < windowheight - revealpoint){
+              reveals[i].classList.add('active');
+            }
+            else{
+              reveals[i].classList.remove('active');
+            }
+          }
+        }
+    </script>
+    <div id="welcome-screen">
+        <h2>Welcome</h2>
+    </div>
+    <header>
+        <img class='logo' src='https://th.bing.com/th/id/R.bcca0f3ac3960ad499b3b08ea4cd4228?rik=aDuLHQ%2bgaqFqow&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-images-free%2ftransparent-images-free-24.png&ehk=TNfHzhvyyNoBkufoC08hc4PdEkeP%2bPkMv7pzJa46qmo%3d&risl=&pid=ImgRaw&r=0' height="70px" width="70px">
+        <li>
+            <a href="homepage.html"><ul class="item tb-1"><u>Home</u></ul></a>
+            <a href="ttt.html"><ul class="item tb-2">Tic Tac Toe</ul></a>
+            <a href="countdown.html"><ul class="item tb-3">Countdown To...</ul></a>
+            <a href="clickergame.html"><ul class="item tb-4">Clicker Game</ul></a>
+        </li>
+        <a href="https://wikipedia.org" target="_blank"><img class="pfp" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" height="40px" width="40px"></a>
+    </header>
+    <div class="all">
+        <div class="box-for-intro">
+            <section id="intro">
+                <h1>Welcome to our Project!</h1>
+                <p>After long and tedious debugging, we are finally proud to submit our final project for this course. Below will be a showcase of what we have learned in order to produce what is currently in front of you. </p>
+            </section>
+        </div>
+        <div class="box-for-html reveal">
+            <div class="html">
+                <h1>HTML</h1>
+                <p>The framework for this website is coded in one of the most widely used and important coding languages, HTML. Without HTML, we wouldn't have Google, YouTube, or even ChatGPT! Creating a website has two purposes for us. The first being a high quality final product that we are proud to call ours. The second is to jumpstart a career in Front-End Development. HTML is quite boring to look at, so it is always important to use...</p>
+            </div>
+        </div>
+        <div class="box-for-css reveal">
+            <div class="html">
+                <h1>CSS</h1>
+                <p>This website can only look as beautiful as it does with the help of CSS. CSS allows for endless styling of websites, including the fade animation we implemented. It also allows for things like this! Hover over the HTML, CSS, and JavaScript titles for an insight on what CSS animations can do.</p>
+            </div>
+        </div>
+        <div class="box-for-js reveal">
+            <div class="html">
+                <h1>JS</h1>
+                <p>To add functionality to a website, JavaScript is essential. The login system and Tic Tac Toe game are made possible with JavaScript. JavaScript is also one of the most widely used languages today, and is essential to any aspiring developer looking to make a career</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
